@@ -1,0 +1,24 @@
+{
+  "id" : "61cfe9aa-392a-4522-b84b-7f2b20dd7b86",
+  "request" : {
+    "url" : "/get-available-book-count",
+    "method" : "POST",
+    "headers" : {
+      "Content-Type" : {
+        "matches" : "application/json.*"
+      }
+    },
+    "bodyPatterns" : [ {
+      "matchesJsonPath" : "$[?(@.['bookId'] == 1)]"
+    } ]
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"count\":4}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "61cfe9aa-392a-4522-b84b-7f2b20dd7b86"
+}
